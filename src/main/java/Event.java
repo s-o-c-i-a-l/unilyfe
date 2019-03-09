@@ -49,18 +49,15 @@ public class Event implements Categorisable{
 		this.endTime = endTime;
 	}
 
+	@Override
 	public void addCategory (String category) {
 		this.category.add(category);
 	}
 
+	@Override
 	public void removeCategory (String category) {
 		if (this.category.contains(category)) this.category.remove(category);
 	}
-
-	public int numberOfCategories () {
-		return this.category.size();
-	}
-	
 
 	public boolean overlap (Event event) {
 		return (this.startTime.getTime() <= event.endTime.getTime() &&
@@ -69,7 +66,7 @@ public class Event implements Categorisable{
 
 	@Override
 	public int numberOfCategories() {
-		return 0;
+		return category.size();
 	}
 
 	@Override
@@ -78,7 +75,7 @@ public class Event implements Categorisable{
 	}
 
 	@Override
-	public Set<String> getAllElements() {
-		return null;
+	public Set<String> getAllCategories() {
+		return category;
 	}
 }

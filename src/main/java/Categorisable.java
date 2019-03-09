@@ -5,9 +5,6 @@ public interface Categorisable {
 	// add a new category to the category set
 	void addCategory (String category);
 
-	// add categories
-	void addCategory (Categorisable c);
-
 	// remove a category from the category set
 	void removeCategory (String category);
 
@@ -24,6 +21,6 @@ public interface Categorisable {
 	Set<String> matchingCategories (Categorisable c);
 
 	// get all category elements in a set
-	Set<String> getAllElements ();
+	Set<String> getAllCategories ();
 
 }

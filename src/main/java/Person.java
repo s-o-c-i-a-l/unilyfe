@@ -26,8 +26,18 @@ public class Person implements Categorisable {
     return societiesInvolved;
   }
 
-  public void addInterest(String interest) {
+  @Override
+  public void addCategory(String interest) {
     interests.add(interest);
+  }
+
+  @Override
+  public void addCategory(Categorisable c) {
+   Set<String> categoriesOfC = c.getAllCategories();
+
+   for(String category : categoriesOfC) {
+
+   }
   }
 
   public void addSociety(Society society) {
@@ -41,7 +51,7 @@ public class Person implements Categorisable {
 
   @Override
   public int numberOfMatchingCategories(Categorisable c) {
-    Set<String> categoryOfC = c.getAllElements();
+    Set<String> categoryOfC = c.getAllCategories();
     Iterator<String> iterator = categoryOfC.iterator();
     int matchingCategories = 0;
 
@@ -56,7 +66,10 @@ public class Person implements Categorisable {
   }
 
   @Override
-  public Set<String> getAllElements() {
+  public Set<String> getAllCategories() {
     return interests;
   }
+
+  @Override
+  public
 }

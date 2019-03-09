@@ -34,7 +34,7 @@ public class Society implements Categorisable {
 
   @Override
   public int numberOfMatchingCategories(Categorisable c) {
-    Set<String> categoryOfC = c.getAllElements();
+    Set<String> categoryOfC = c.getAllCategories();
     Iterator<String> iterator = categoryOfC.iterator();
     int matchingCategories = 0;
 
@@ -49,7 +49,7 @@ public class Society implements Categorisable {
   }
 
   @Override
-  public Set<String> getAllElements() {
+  public Set<String> getAllCategories() {
     return focus;
   }
 
