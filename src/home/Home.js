@@ -7,6 +7,7 @@ class Home extends Component{
   constructor(){
     super();
     this.profile = "./image/profile.png";
+    this.main = "../image/main.png";
   }
   render(){
     return (
@@ -15,16 +16,7 @@ class Home extends Component{
       <div id="page-wrap">
         <img src={require('../image/profile.png')} alt="Profile" class="Profile"/>
         <h2 class="name">Blair Shi</h2>
-      </div>
-      <div class="first-row">
-        <div class="first-column">
-          <h3> My Society</h3>
-        </div>
-        <div class="pedding-column">
-        </div>
-        <div class="second-column">
-          <h3> Monthly Calendar</h3>
-        </div>
+        <img src={require('../image/main.png')} alt="Main" class="Main"/>
       </div>
     </div>
     )
