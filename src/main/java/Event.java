@@ -43,4 +43,18 @@ public class Event implements Categorisable{
 		else return false;
 	}
 
+	@Override
+	public int numberOfCategories() {
+		return 0;
+	}
+
+	@Override
+	public int numberOfMatchingCategories(Categorisable c) {
+		return 0;
+	}
+
+	@Override
+	public Set<String> getAllElements() {
+		return null;
+	}
 }
