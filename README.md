@@ -1,3 +1,3 @@
-# S-O-C-I-A-L
+# unilyfe
 
-Connecting people with societies.
+Connecting students with societies.
