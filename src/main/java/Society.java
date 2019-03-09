@@ -6,7 +6,7 @@ public class Society implements Categorisable {
 
   private String name;
   private Set<String> focus;
-  private Set<Person> admins;
+  private Set<User> admins;
 
   public Society(String name, String ... focuses) {
     this.name = name;
@@ -17,7 +17,7 @@ public class Society implements Categorisable {
     this.admins = new HashSet<>();
   }
 
-  public void addAdmin(Person person) {
+  public void addAdmin(User person) {
     admins.add(person);
   }
 

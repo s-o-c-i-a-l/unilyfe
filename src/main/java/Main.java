@@ -14,14 +14,14 @@ public class Main {
     }
 
 
-    private void init () {
+    private void init () throws IOException {
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
         server.createContext("/", new AppHandler());
         server.setExecutor(Executors.newCachedThreadPool());
         server.start();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         new Main().init();
     }
 }
