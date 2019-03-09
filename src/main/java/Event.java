@@ -59,6 +59,7 @@ public class Event implements Categorisable{
 		if (this.category.contains(category)) this.category.remove(category);
 	}
 
+	@Override
 	public int numberOfCategories () {
 		return this.category.size();
 	}
@@ -68,18 +69,21 @@ public class Event implements Categorisable{
 				this.endTime.getTime() >= event.startTime.getTime());
 	}
 
+	@Override
 	public int numberOfMatchingCategories(Categorisable c) {
 		Set<String> otherCategories = new HashSet<>(c.getAllCategories());
 		otherCategories.retainAll(this.category);
 		return otherCategories.size();
 	}
 
+	@Override
 	public Set<String> matchingCategories(Categorisable c) {
 		Set<String> otherCategories = new HashSet<>(c.getAllCategories());
 		otherCategories.retainAll(this.category);
 		return otherCategories;
 	}
 
+	@Override
 	public Set<String> getAllCategories() {
 		return category;
 	}
