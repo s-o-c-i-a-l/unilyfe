@@ -23,8 +23,14 @@ public class Society implements Categorisable {
     admins.add(person);
   }
 
-  public void addFocus(String f) {
+  @Override
+  public void addCategory(String f) {
     focus.add(f);
+  }
+
+  @Override
+  public void removeCategory(String category) {
+    focus.remove(category);
   }
 
   @Override
@@ -46,6 +52,11 @@ public class Society implements Categorisable {
     }
 
     return matchingCategories;
+  }
+
+  @Override
+  public Set<String> matchingCategories(Categorisable c) {
+    return null;
   }
 
   @Override

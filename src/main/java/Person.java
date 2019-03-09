@@ -31,12 +31,8 @@ public class Person implements Categorisable {
   }
 
   @Override
-  public void addCategory(Categorisable c) {
-   Set<String> categoriesOfC = c.getAllCategories();
-
-   for(String category : categoriesOfC) {
-
-   }
+  public void removeCategory(String interest) {
+    interests.remove(interest);
   }
 
   public void addSociety(Society society) {
@@ -62,6 +58,11 @@ public class Person implements Categorisable {
     }
 
     return matchingCategories;
+  }
+
+  @Override
+  public Set<String> matchingCategories(Categorisable c) {
+    return null;
   }
 
   @Override

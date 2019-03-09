@@ -18,6 +18,6 @@ public interface Categorisable {
 	Set<String> matchingCategories (Categorisable c);
 
 	// get all category elements in a set
-	Set<String> getAllCategories ();
+	Set<String> getAllCategories();
 
 }
