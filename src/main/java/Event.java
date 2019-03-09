@@ -67,4 +67,18 @@ public class Event implements Categorisable{
 				this.endTime.getTime() >= event.startTime.getTime());
 	}
 
+	@Override
+	public int numberOfCategories() {
+		return 0;
+	}
+
+	@Override
+	public int numberOfMatchingCategories(Categorisable c) {
+		return 0;
+	}
+
+	@Override
+	public Set<String> getAllElements() {
+		return null;
+	}
 }
