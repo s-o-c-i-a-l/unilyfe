@@ -8,9 +8,6 @@ public interface Categorisable {
 	// remove a category from the category set
 	void removeCategory (String category);
 
-	// remove categories
-	void removeCategories (Categorisable c);
-
 	// return number of elements in the category set
 	int numberOfCategories ();
 

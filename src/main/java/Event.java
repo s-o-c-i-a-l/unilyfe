@@ -59,22 +59,27 @@ public class Event implements Categorisable{
 		if (this.category.contains(category)) this.category.remove(category);
 	}
 
+	public int numberOfCategories () {
+		return this.category.size();
+	}
+
 	public boolean overlap (Event event) {
 		return (this.startTime.getTime() <= event.endTime.getTime() &&
 				this.endTime.getTime() >= event.startTime.getTime());
 	}
 
-	@Override
-	public int numberOfCategories() {
-		return category.size();
-	}
-
-	@Override
 	public int numberOfMatchingCategories(Categorisable c) {
-		return 0;
+		Set<String> otherCategories = new HashSet<>(c.getAllCategories());
+		otherCategories.retainAll(this.category);
+		return otherCategories.size();
 	}
 
-	@Override
+	public Set<String> matchingCategories(Categorisable c) {
+		Set<String> otherCategories = new HashSet<>(c.getAllCategories());
+		otherCategories.retainAll(this.category);
+		return otherCategories;
+	}
+
 	public Set<String> getAllCategories() {
 		return category;
 	}
