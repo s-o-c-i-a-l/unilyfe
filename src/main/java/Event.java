@@ -8,14 +8,16 @@ public class Event implements Categorisable{
 	private Date endTime;
 	private HashSet<String> category;
 
-	public Event (String name, Date startTime, Date endTime) {
+	public Event (String name, Date startTime, Date endTime) throws EventTimeException {
 		this.name = name;
+		if (startTime.after(endTime)) throw new EventTimeException();
 		this.startTime = startTime;
 		this.endTime = endTime;
 	}
 
-	public Event (String name, Date startTime, Date endTime, Set<String> category) {
+	public Event (String name, Date startTime, Date endTime, Set<String> category) throws EventTimeException {
 		this.name = name;
+		if (startTime.after(endTime)) throw new EventTimeException();
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.category = new HashSet<String>(category);
@@ -37,10 +39,32 @@ public class Event implements Categorisable{
 		this.name = newName;
 	}
 
+	public void changeStartTime (Date startTime) throws EventTimeException {
+		if (startTime.after(this.endTime)) throw new EventTimeException();
+		this.startTime = startTime;
+	}
+
+	public void changeEndTime (Date endTime) throws EventTimeException {
+		if (endTime.before(this.startTime)) throw new EventTimeException();
+		this.endTime = endTime;
+	}
+
+	public void addCategory (String category) {
+		this.category.add(category);
+	}
+
+	public void removeCategory (String category) {
+		if (this.category.contains(category)) this.category.remove(category);
+	}
+
+	public int numberOfCategories () {
+		return this.category.size();
+	}
+	
+
 	public boolean overlap (Event event) {
-		if (this.startTime.getTime() <= event.endTime.getTime() &&
-				this.endTime.getTime() >= event.startTime.getTime()) return true;
-		else return false;
+		return (this.startTime.getTime() <= event.endTime.getTime() &&
+				this.endTime.getTime() >= event.startTime.getTime());
 	}
 
 }
