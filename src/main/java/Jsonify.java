@@ -7,8 +7,8 @@ public class Jsonify {
 		return gson.toJson(javaObject);
 	}
 
-	public Object fromJson (String json) {
-		return gson.fromJson(json, Object.class);
+	public Object fromJson (String json, Class className) {
+		return gson.fromJson(json, className);
 	}
 
 }
