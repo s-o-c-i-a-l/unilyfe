@@ -3,6 +3,11 @@
     height: 35vh;
     overflow: hidden;
     text-align: center;
+    display: inline-block;
+}
+
+* {
+    color: #3b5998;
 }
 
 #cover-photo {
@@ -13,3 +18,29 @@
 .centered {
     text-align: center;
 }
+
+p {
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+button {
+    position: relative;
+
+    display: block;
+    margin: 30px auto;
+    padding: 0;
+
+    overflow: hidden;
+
+    font-size: 32px;
+    width: 100px;
+    height: 50px;
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+    background-color: #ff4040;
+    color: #ecf0f1;
+  }
